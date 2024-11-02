@@ -1,27 +1,27 @@
 from django.shortcuts import render
 from .models import (
     School_Deployment,
-    Catagory,
+    Catagory
 )
 from django.contrib import messages
 from .forms import formInput
 # Create your views here.
 
 def index (request):
-
     form = formInput (request.POST or None)
+
     if request.method == 'POST':
         
-      form.is_valid
-      form.save()
-      messages.success (request, 'Successfully Deployed!')
+      if form.is_valid():
+         
+        form.save()
+        messages.success (request, 'Successfully Deployed!')
+        form = formInput()
 
-      form = formInput()
-
-    form_database = School_Deployment().objects.all()
-
+    catagory = Catagory.objects.all()
+    
     context = {
-        'form_database' : form_database,
+        'catagory' : catagory,
         'form' : form
     }
 

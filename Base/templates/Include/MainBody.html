@@ -17,16 +17,17 @@
     </div>
   
 
-    {% if 'form_database' %}
+    {% if School %}
 
     <div class="card m-5" style="width: 18rem;">
   
-      <img class="mt-2" src="{{/media/{{form_database.image}}" class="card-img-top" alt="...">
-  
       <div class="card-body">
-        <h5 class="card-title">{{first_name + " " + last_name }}</h5>
-        <p class="card-text">{{form_database.description}}</p>
+
+        <h5 class="card-title">{{catagory.name}}</h5>
+        <p class="card-text">{{catagory.discriptionsTwo}}</p>
+
         <a href="#" class="btn btn-primary">Edit</a>
+
       </div>
   
     </div>
