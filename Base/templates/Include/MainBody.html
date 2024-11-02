@@ -13,16 +13,16 @@
 
   </div>
 
-    {% if School %}
+    {% if school %}
 
     <div class="card m-5" style="width: 18rem;">
   
       <div class="card-body">
 
-        <h5 class="card-title">{{School.first_name}}</h5>
-        <p class="card-text">{{School.description}}</p>
+        <h5 class="card-title">{{school.first_name}}</h5>
+        <p class="card-text">{{school.description}}</p>
 
-        <a href="#" class="btn btn-primary">Edit</a>
+        <a href="{% url 'detailOwn' 'school.id' %}" class="btn btn-primary">Edit</a>
 
       </div>
   
