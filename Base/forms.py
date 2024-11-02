@@ -12,5 +12,9 @@ class formInput (forms.ModelForm):
      }),
     'last_name' : forms.TextInput(attrs={
        'class' : 'form-control'
+     }),
+     'description' : forms.Textarea(attrs={
+       'class' : 'form-control',
+       'type' : 'Text'
      })
    }

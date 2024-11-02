@@ -18,10 +18,10 @@ def index (request):
         messages.success (request, 'Successfully Deployed!')
         form = formInput()
 
-    catagory = Catagory.objects.all()
+    School = School_Deployment.objects.all()
     
     context = {
-        'catagory' : catagory,
+        'catagory' : School,
         'form' : form
     }
 
