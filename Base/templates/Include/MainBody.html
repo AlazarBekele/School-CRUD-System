@@ -16,17 +16,24 @@
 
     </div>
   
+
+    {% if 'form_database' %}
+
     <div class="card m-5" style="width: 18rem;">
   
-      <img class="mt-2" src="https://static.vecteezy.com/system/resources/previews/009/734/564/original/default-avatar-profile-icon-of-social-media-user-vector.jpg" class="card-img-top" alt="...">
+      <img class="mt-2" src="{{/media/{{form_database.image}}" class="card-img-top" alt="...">
   
       <div class="card-body">
-        <h5 class="card-title">Name</h5>
-        <p class="card-text">About your</p>
+        <h5 class="card-title">{{first_name + " " + last_name }}</h5>
+        <p class="card-text">{{form_database.description}}</p>
         <a href="#" class="btn btn-primary">Edit</a>
       </div>
   
     </div>
+    {% else %}
+    <p class="text-center text-danger">No data found!</p>
+    
+    {% endif %}
 
 
 
