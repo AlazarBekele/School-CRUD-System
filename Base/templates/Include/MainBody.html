@@ -1,16 +1,55 @@
 
 
-<div class="row justify-content-center mt-3">
+<div class="row justify-content-center mt-5">
+  
+  <div class="col-md-8 justify-content-center">
 
-  <div class="card" style="width: 18rem;">
+    <div>
 
-    <img class="mt-2" src="" class="card-img-top" alt="...">
-
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      {% include "Include/message.html" %}
+  
     </div>
+
+    <div class="float-end">
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
+
+    </div>
+  
+    <div class="card m-5" style="width: 18rem;">
+  
+      <img class="mt-2" src="https://static.vecteezy.com/system/resources/previews/009/734/564/original/default-avatar-profile-icon-of-social-media-user-vector.jpg" class="card-img-top" alt="...">
+  
+      <div class="card-body">
+        <h5 class="card-title">Name</h5>
+        <p class="card-text">About your</p>
+        <a href="#" class="btn btn-primary">Edit</a>
+      </div>
+  
+    </div>
+
+
+
+    <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   </div>
 
