@@ -1,38 +1,34 @@
 from django.shortcuts import render, HttpResponse, redirect
-from .models import (
-    School_Deployment,
-    Catagory
-)
-
+from .models import SchoolDeployment
 from django.contrib import messages
 from .forms import formInput
 # Create your views here.
 
-def index (request):
+
+
+def index (request): # Create
     form = formInput (request.POST or None)
 
     if request.method == 'POST':
-        
+
       if form.is_valid():
-         
         form.save()
         messages.success (request, 'Successfully Deployed!')
         form = formInput()
 
-    school = School_Deployment.objects.all()
-    
+    schoolData = SchoolDeployment.objects.all()
     context = {
-        'school' : school,
+        'schoolData' : schoolData,
         'form' : form
     }
 
-    return render (request, 'Base/index.html', context)
+    return render (request, 'Base/index.html', context=context)
 
 
-def detailOwn (request, id):
+def detailOwn (request, id): # Update & Delete
     
     try:
-      schoolid = School_Deployment.objects.get(id=id)
+      schoolid = SchoolDeployment.objects.get(pk=id)
     except:
       return HttpResponse ('Bad request!')
     
@@ -44,8 +40,8 @@ def detailOwn (request, id):
         return redirect ('index')
     
     context = {
-       'school' : schoolid,
+       'schoolid' : schoolid,
        'form' : form
     }
 
-    return render (request, 'detail.html', context=context)
+    return render (request, 'Base/detail.html', context=context)

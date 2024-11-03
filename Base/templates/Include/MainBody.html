@@ -13,26 +13,29 @@
 
   </div>
 
-    {% if school %}
+    {% if schoolData %}
+    {% for schoolDatas in schoolData %}
 
-    <div class="card m-5" style="width: 18rem;">
-  
-      <div class="card-body">
+    <div class="col mt-3">
 
-        <h5 class="card-title">{{school.first_name}}</h5>
-        <p class="card-text">{{school.description}}</p>
+      <div class="col-md-8">
 
-        <a href="{% url 'detailOwn' 'school.id' %}" class="btn btn-primary">Edit</a>
-
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{schoolData.first_name}}</h5>
+            <p class="card-text">{{schoolData.description}}</p>
+            <a href="#" class="btn btn-primary">Edit</a>
+          </div>
+        </div>
       </div>
-  
-    </div>
+
+    {% endfor %}
     {% else %}
     <p class="text-center text-danger">No data found!</p>
     
     {% endif %}
 
-
+      <h1>{{school_Data.first_name}}</h1>
 
     <!-- Button trigger modal -->
 
@@ -42,7 +45,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
       </div>
 
     <form method="post">

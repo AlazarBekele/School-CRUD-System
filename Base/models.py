@@ -10,7 +10,7 @@ class Catagory (models.Model):
   def __str__(self) -> str:
     return self.name
 
-class School_Deployment(models.Model):
+class SchoolDeployment(models.Model):
 
   first_name = models.CharField (max_length=30)
   last_name = models.CharField (max_length=40)

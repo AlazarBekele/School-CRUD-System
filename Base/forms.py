@@ -1,9 +1,9 @@
 from django import forms
-from .models import School_Deployment
+from .models import SchoolDeployment
 
 class formInput (forms.ModelForm):
   class Meta:
-   model = School_Deployment
+   model = SchoolDeployment
    fields = '__all__'
 
    widgets = {
